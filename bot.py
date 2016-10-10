@@ -54,7 +54,7 @@ def derp(bot, update): # Method to send derps for the event handler to call
     sendImage(bot, update, derps[randint(0,len(derps))])
 
 def start(bot, update): # Method to send start text that event handler calls
-    bot.sendMessage(chat_id=update.message.chat_id, text = config["name"] + " version " + str(config['version']) + " has been started.")
+    bot.sendMessage(chat_id=update.message.chat_id, text = config["name"] + " running v" + str(config['version']))
 
 def unknown(bot, update): # Method to send response for unknonwn entries that the event handler calls
     bot.sendMessage(chat_id=update.message.chat_id, text = "Don't try that again!")
@@ -63,9 +63,6 @@ def i(bot, update):
     chat=update.message.chat_id
     bot.sendMessage(chat_id=chat, text = "Chat ID: " + str(chat))
 
-def version(bot, update):
-    bot.sendMessage(chat_id=update.message.chat_id, text = config["name"] + " v" + config["version"])
-
 #Bot Start
 updater    = Updater(token=str(botarr["token"]))
 dispatcher = updater.dispatcher
@@ -73,7 +70,6 @@ dispatcher.add_handler(CommandHandler('tophat', tophat))
 dispatcher.add_handler(CommandHandler('fedora', fedora))
 dispatcher.add_handler(CommandHandler('derp', derp))
 dispatcher.add_handler(CommandHandler('start', start))
-dispatcher.add_handler(CommandHandler('version', version))
 # Don't re-enable start
 #dispatcher.addUnknownTelegramCommandHandler(unknown)
 #telegram.Bot(token=tokenid).sendMessage(chat_id="-55491048", text="Hello World")
