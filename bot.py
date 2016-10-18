@@ -58,7 +58,7 @@ def derp(bot, update): # Method to send derps for the event handler to call
     sendImage(bot, update, derps[randint(0,len(derps))])
 
 def meme(bot, update): # Method to send memes for the event handler to call
-    sendMessage(chat_id=update.message.chat_id, text = "The / memes handler has been created, but no memes have been added to the array. To add images to the array please let the bot owner know. ScarletFloppy will be adding images to to the memes array.")
+    bot.sendMessage(chat_id=update.message.chat_id, text = "The / memes handler has been created, but no memes have been added to the array. To add images to the array please let the bot owner know. ScarletFloppy will be adding images to to the memes array.")
     #sendImage(bot, update, memes[randint(0,len(memes))])
 
 def start(bot, update): # Method to send start text that event handler calls
