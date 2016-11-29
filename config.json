@@ -1,6 +1,6 @@
 {
     "name": "SwankyBot",
-    "version": "3.2.4",
+    "version": "3.2.5",
     "chatids": {
         "HouseChat":"-55491048",
         "Self":"145723837"
