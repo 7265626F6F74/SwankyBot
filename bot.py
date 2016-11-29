@@ -78,6 +78,7 @@ dispatcher.add_handler(CommandHandler('tophat', tophat))
 dispatcher.add_handler(CommandHandler('fedora', fedora))
 dispatcher.add_handler(CommandHandler('derp', derp))
 dispatcher.add_handler(CommandHandler('meme', meme))
+dispatcher.add_handler(CommandHandler('i', i))
 dispatcher.add_handler(CommandHandler('start', start))
 # Don't re-enable start
 #dispatcher.addUnknownTelegramCommandHandler(unknown)
