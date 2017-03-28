@@ -12,7 +12,7 @@ fedoras=[]
 derps=[]
 memes=[]
 
-iif ((len(sys.argv) == 2) and (len(sys.argv[1]) > 1) and (str(sys.argv[1:]) != 'null')):
+if ((len(sys.argv) == 2) and (len(sys.argv[1]) > 1) and (str(sys.argv[1:]) != 'null')):
     token = str(sys.argv[1])
 else:
     print "Error: No Token Provided. Quitting!"
