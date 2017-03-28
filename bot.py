@@ -6,18 +6,17 @@ from random import randint
 import telegram, json, os.path, sys
 
 # Variables
-botfile = "/root/.ssh/token.json" # This file contains the bot token. The  /root folder is used because this bot is designed to run in an alpine container.
 conf = "/root/bot/config.json" # This file contains the configuration values used within this bot. The /root folder is used because this bot is designed to run in an alpine container.
 tophats=[]
 fedoras=[]
 derps=[]
 memes=[]
 
-if os.path.isfile(botfile) == True: # Load in the swankybot.json config file from the container/host or exit if it doesn't exist
-    with open(botfile) as file:
-        botarr = json.load(file)
+iif ((len(sys.argv) == 2) and (len(sys.argv[1]) > 1) and (str(sys.argv[1:]) != 'null')):
+    token = str(sys.argv[1])
 else:
-    sys.exit(botfile + " file not found.")
+    print "Error: No Token Provided. Quitting!"
+    sys.exit()
     
 if os.path.isfile(conf) == True: # Load in the conf.json config file from the repository or exit if it doesn't exist
     with open(conf) as file:
@@ -72,7 +71,7 @@ def i(bot, update):
     bot.sendMessage(chat_id=chat, text = "Chat ID: " + str(chat))
 
 #Bot Start
-updater    = Updater(token=str(botarr["token"]))
+updater    = Updater(token=token)
 dispatcher = updater.dispatcher
 dispatcher.add_handler(CommandHandler('tophat', tophat))
 dispatcher.add_handler(CommandHandler('fedora', fedora))
