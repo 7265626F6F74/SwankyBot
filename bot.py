@@ -17,7 +17,7 @@ if ((len(sys.argv) == 2) and (len(sys.argv[1]) > 1) and (str(sys.argv[1:]) != 'n
 else:
     print "Error: No Token Provided. Quitting!"
     sys.exit()
-    
+
 if os.path.isfile(conf) == True: # Load in the conf.json config file from the repository or exit if it doesn't exist
     with open(conf) as file:
         config = json.load(file)
@@ -26,7 +26,7 @@ else:
 
 for tophat in config["tophats"]: # Load the tophats array values from the config file into an array for python
     tophats.append(str(tophat))
-    
+
 for fedora in config["fedoras"]: # Load the fedoras array values from the config file into an array for python
     fedoras.append(str(fedora))
 
@@ -57,8 +57,10 @@ def derp(bot, update): # Method to send derps for the event handler to call
     sendImage(bot, update, derps[randint(0,len(derps))])
 
 def meme(bot, update): # Method to send memes for the event handler to call
-    bot.sendMessage(chat_id=update.message.chat_id, text = "The / memes handler has been created, but no memes have been added to the array. To add images to the array please let the bot owner know. @ScarletFloppy will be adding images to to the memes array.")
-    #sendImage(bot, update, memes[randint(0,len(memes))])
+    if memes:
+        sendImage(bot, update, memes[randint(0,len(memes))])
+    else:
+        bot.sendMessage(chat_id=update.message.chat_id, text = "The / memes handler has been created, but no memes have been added. To request adding a meme, please let the bot owner know. @ScarletFloppy will add the meme to the bot.")
 
 def start(bot, update): # Method to send start text that event handler calls
     bot.sendMessage(chat_id=update.message.chat_id, text = config["name"] + " running v" + str(config['version']))

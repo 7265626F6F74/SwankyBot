@@ -1,10 +1,10 @@
 {
     "name": "SwankyBot",
-    "version": "4.1",
+    "version": "4.1.2",
     "chatids": {
         "Self":"145723837"
     },
-    "tophats": [        
+    "tophats": [
         "http://i.imgur.com/4LQotTQ.gif",
         "http://i.imgur.com/AY0gncu.jpg",
         "http://i.imgur.com/xDfes0x.jpg",
@@ -48,7 +48,8 @@
         "http://i.imgur.com/oZIJ1ku.jpg",
         "http://i.imgur.com/iM59R8m.png",
         "http://i.imgur.com/7lvHndm.jpg",
-        "http://i.imgur.com/PEpDMzY.jpg"
+        "http://i.imgur.com/PEpDMzY.jpg",
+        "http://i.imgur.com/cE1Peqe.gif"
     ],
     "derps": [
         "http://i.imgur.com/FY97Q1t.gif",
