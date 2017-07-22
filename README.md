@@ -1,5 +1,7 @@
 # SwankyBot
 
+[![Docker Repository on Quay](https://quay.io/repository/scarletfloppy/swankybot/status "Docker Repository on Quay")](https://quay.io/repository/scarletfloppy/swankybot)
+
 SwankyBot is my generic bot for bot things in [Telegram](https://telegram.org/).
 
 ## [Python Telegram API Wrapper](https://python-telegram-bot.org/)
