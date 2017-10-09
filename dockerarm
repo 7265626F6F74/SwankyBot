@@ -2,7 +2,7 @@ FROM arm32v7/ubuntu:rolling
 MAINTAINER ScarletFloppy
 ENV name SwankyBot
 ENV token null
-RUN apt -y install python python-pip wget ca-certificates
+RUN apt install -y python python-pip wget ca-certificates
 RUN pip install --upgrade pip
 RUN pip install python-telegram-bot
 RUN wget -O /tmp/master.zip https://github.com/ScarletFloppy/${name}/archive/master.zip
