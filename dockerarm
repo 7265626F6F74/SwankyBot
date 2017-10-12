@@ -2,7 +2,7 @@ FROM resin/rpi-raspbian:stretch
 MAINTAINER ScarletFloppy
 ENV name SwankyBot
 ENV token null
-RUN [ apt", "update" ]
+RUN [ "apt", "update" ]
 RUN [ "apt", "install", "-y", "python", "python-pip", "wget", "ca-certificates", "unzip" ]
 RUN [ "pip", "install", "--upgrade", "pip" ]
 RUN [ "pip", "install", "python-telegram-bot" ]
