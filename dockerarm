@@ -1,14 +1,13 @@
-FROM arm32v7/ubuntu:latest
+FROM resin/rpi-raspbian:stretch
 MAINTAINER ScarletFloppy
 ENV name SwankyBot
 ENV token null
-COPY qemu-arm /usr/bin/qemu-arm-static
-RUN [ "/usr/bin/qemu-arm-static", "apt", "update" ]
-RUN [ "/usr/bin/qemu-arm-static", "apt", "install", "-y", "python", "python-pip", "wget", "ca-certificates", "unzip" ]
-RUN [ "/usr/bin/qemu-arm-static", "pip", "install", "--upgrade", "pip" ]
-RUN [ "/usr/bin/qemu-arm-static", "pip", "install", "python-telegram-bot" ]
-RUN [ "/usr/bin/qemu-arm-static", "wget", "-O", "/tmp/master.zip", "https://github.com/ScarletFloppy/${name}/archive/master.zip" ]
-RUN [ "/usr/bin/qemu-arm-static", "mkdir", "-p", "/bot" ]
-RUN [ "/usr/bin/qemu-arm-static", "unzip", "-d", "/bot", "/tmp/master.zip" ]
-RUN [ "/usr/bin/qemu-arm-static", "rm", "/tmp/master.zip" ]
+RUN [ apt", "update" ]
+RUN [ "apt", "install", "-y", "python", "python-pip", "wget", "ca-certificates", "unzip" ]
+RUN [ "pip", "install", "--upgrade", "pip" ]
+RUN [ "pip", "install", "python-telegram-bot" ]
+RUN [ "wget", "-O", "/tmp/master.zip", "https://github.com/ScarletFloppy/${name}/archive/master.zip" ]
+RUN [ "mkdir", "-p", "/bot" ]
+RUN [ "unzip", "-d", "/bot", "/tmp/master.zip" ]
+RUN [ "rm", "/tmp/master.zip" ]
 ENTRYPOINT sh -c "python /bot/${name}-master/bot.py ${token}"
