@@ -2,6 +2,7 @@ FROM arm32v7/ubuntu:latest
 MAINTAINER ScarletFloppy
 ENV name SwankyBot
 ENV token null
+COPY qemu-arm /usr/bin/qemu-arm-static
 RUN [ "/usr/bin/qemu-arm-static", "apt", "update" ]
 RUN [ "/usr/bin/qemu-arm-static", "apt", "install", "-y", "python", "python-pip", "wget", "ca-certificates", "unzip" ]
 RUN [ "/usr/bin/qemu-arm-static", "pip", "install", "--upgrade", "pip" ]
