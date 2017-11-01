@@ -1,5 +1,5 @@
 #!/usr/bin/python
-__author__ = 'scarletfloppy'
+__author__ = '7265626F6F74'
 # Imports
 from telegram.ext import Updater, CommandHandler
 from random import randint
