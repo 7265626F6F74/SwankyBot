@@ -1,15 +1,12 @@
-FROM resin/rpi-raspbian:stretch
-MAINTAINER 7265626F6F74
+FROM alpine:3.8
+MAINTAINER uberentwickelt
 ENV name SwankyBot
 ENV token null
-RUN [ "cross-build-start" ]
-RUN apt update \
- && apt install python3 python3-wheel python3-pip wget unzip \
- && pip3 install --upgrade pip setuptools \
- && pip3 install --upgrade python-telegram-bot \
- && wget -O /tmp/master.zip https://github.com/7265626F6F74/${name}/archive/master.zip \
+RUN apk add --no-cache python3 wget unzip git \
+ && git clone https://github.com/python-telegram-bot/python-telegram-bot --recursive
+ && python3 python-telegram-bot/setup.py install \
+ && wget -O /tmp/master.zip https://github.com/uberentwickelt/${name}/archive/master.zip \
  && mkdir -p /bot \
  && unzip -d /bot /tmp/master.zip \
  && rm /tmp/master.zip
-RUN [ "cross-build-end" ]
 ENTRYPOINT sh -c "python3 /bot/${name}-master/bot.py ${token}"
