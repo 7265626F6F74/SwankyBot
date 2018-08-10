@@ -3,8 +3,9 @@ MAINTAINER uberentwickelt
 ENV name SwankyBot
 ENV token null
 RUN apk add --no-cache python3 wget unzip git \
- && git clone https://github.com/python-telegram-bot/python-telegram-bot --recursive
- && python3 python-telegram-bot/setup.py install \
+ && git clone https://github.com/python-telegram-bot/python-telegram-bot --recursive \
+ && cd python-telegram-bot \
+ && python3 setup.py install \
  && wget -O /tmp/master.zip https://github.com/uberentwickelt/${name}/archive/master.zip \
  && mkdir -p /bot \
  && unzip -d /bot /tmp/master.zip \
