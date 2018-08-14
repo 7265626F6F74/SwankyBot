@@ -5,7 +5,7 @@ from random import randint
 import telegram, json, os.path, sys
 
 # Variables
-conf = "/bot/SwankyBot-master/config.json" # This file contains the configuration values used within this bot. The /root folder is used because this bot is designed to run in an alpine container.
+conf = "/bot/config.json" # This file contains the configuration values used within this bot.
 tophats=[]
 fedoras=[]
 derps=[]
